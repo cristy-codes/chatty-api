@@ -1,0 +1,41 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "gZehmhvTm9EkVvNpY+to6hQ9P1w=",
+    "authStrategies": ["jwt", "github"],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "redirect": "http://localhost:3000/home",
+      "google": {
+        "key": "<google oauth key>",
+        "secret": "<google oauth secret>",
+        "scope": ["email", "profile", "openid"]
+      },
+      "github": {
+        "key": "6577c9e1a2b4577f759b",
+        "secret": "a9c8b05c45599ad3c55bb37a5b95e67e821e8483"
+      }
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/chatty"
+}
